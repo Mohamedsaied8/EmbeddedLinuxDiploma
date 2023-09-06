@@ -7,29 +7,28 @@ void welcome(std::string str)
     std::cout << str << std::endl;
 }
 
+
 void fun2(int var)
 {
     std::cout << "var = " << var << std::endl;
 }
 
-void fun1(void (*callback)(int))
+          
+void fun1(void (*callback)(std::string))
 {
-    int data = 10;
-    callback(data);
+    
+    callback("Welcome String");
 }
 
 // a = 100 , b = 1
 int main()
 {
-    void (*fptr)(void (*fptr)(int)) = nullptr;
+    void (*fptr)(void (*fptr)(std::string)) = nullptr;
  
     fptr = fun1;
     void (*fptr_2)(int) = fun2;
     
-    fptr(fun2);
-    welcome("Hello");
-    void (*f_ptr) (std::string) = &welcome;
+    fptr(welcome);
 
-    f_ptr("Welcome");
     return 0;
 }

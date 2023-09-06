@@ -20,7 +20,7 @@ public:
     {
     }
 
-friend std::ostream& operator<<(std::ostream& output,const Complex &complex);
+friend std::ostream& operator <<(std::ostream& output,const Complex &complex);
 
 //return operator+()
 // complex c3 = c1.operator+(c2) 
